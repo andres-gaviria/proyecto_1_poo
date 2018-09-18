@@ -1,4 +1,3 @@
-
 package proyecto;
 
 import java.awt.Color;
@@ -8,7 +7,7 @@ import java.util.Scanner;
 import javax.swing.JTextField;
 
 public class usuario {
-	//funciones
+	
 	private static Scanner teclado;
 	private static int cont=1;
 	private static int num,n,p,opcion;
@@ -19,12 +18,12 @@ public class usuario {
 	private static String [] nombre1 = new String[30];
 	private static String [] nombre_pelicula = new String[30];
 	private static String [] peliculas = new String[30];
-	 //_________________
+	
 	private static String [] nombre_boletos = new String[30];
 	private static String [] cedula_boletos = new String[30];
 	private static String [] nombre_reserva = new String[30];
 	private static String [] cantidad_reserva = new String[30];
-	//_________________
+	
 	public usuario() {
 		nombre[0] = "";
 		nombre1[0] = "";
@@ -114,14 +113,13 @@ public class usuario {
 		num = teclado.nextInt();
 		System.out.println("\n");
 		for(n=1;n<=num;n++){
-			teclado.nextLine();
-			
 			System.out.println(n+" A nombre de quien se hara la reserva?: ");
 			nombre_reserva[n] = teclado.nextLine();
 			System.out.println(n+" Cantidad de boletas: ");
 			cantidad_reserva[n] = teclado.nextLine();
 			System.out.println("\n");
 		}
+		teclado.nextLine();
 		reservas();
 	}
 	public static void listar_reserva() {
@@ -143,7 +141,6 @@ public class usuario {
 			System.out.println("Cantidad: "+cantidad_reserva[n]);
 			System.out.println("\n");
 		}	
-		teclado.nextLine();
 		System.out.println("Suministre el id del cliente a modificar ");
 		n = teclado.nextInt();
 	
@@ -199,8 +196,6 @@ public class usuario {
 		num = teclado.nextInt();
 		System.out.println("\n");
 		for(n=1;n<=num;n++){
-			teclado.nextLine();
-			
 			System.out.println(n+" A nombre de quien se registrara los boletos?: ");
 			nombre_boletos[n] = teclado.nextLine();
 			System.out.println(n+" Suministre Cedula: ");
@@ -214,7 +209,6 @@ public class usuario {
 	public static void listar_boleto() {
 		teclado.nextLine();
 		for(n=cont;n<cont+num;n++){
-			
 			System.out.println("Boleto numero:  "+(n));
 			System.out.println("Cedula: "+cedula_boletos[n]);
 			System.out.println("Nombre: "+nombre_boletos[n]);
@@ -226,12 +220,10 @@ public class usuario {
 	public static void editar_boleto() {
 		teclado.nextLine();
 		for(n=1;n<cont+num;n++){
-			
 			System.out.println("Boleto numero:  "+(n));
 			System.out.println("Cedula: "+cedula_boletos[n]);
 			System.out.println("Nombre: "+nombre_boletos[n]);
 		}	
-		teclado.nextLine();
 		System.out.println("Suministre el id del cliente a modificar ");
 		n = teclado.nextInt();
 	
@@ -329,11 +321,11 @@ public class usuario {
 	
 	public static void crear_usuario() {
 		teclado = new Scanner(System.in);
-		System.out.println("SUMINISTRE LA CANTIDAD DE CLIENTES A REGISTRAR: ");
+		System.out.println("Suministre la cantidad de usuarios a registrar: ");
 		num = teclado.nextInt();
 		System.out.println("\n");
+		teclado.nextLine();
 		for(n=1;n<=num;n++){
-			teclado.nextLine();
 			System.out.println(n+" Suministre Cedula: ");
 			cedula[n] = teclado.nextLine();
 			System.out.println(n+" Suministre Nombre: ");
@@ -342,31 +334,32 @@ public class usuario {
 			telefono[n] = teclado.nextLine();
 			System.out.println("\n");
 		}
-		
+		usuario();
 	}
 	public static void listar_usuarios() {
+		teclado.nextLine();
 		for(n=cont;n<cont+num;n++){
-			teclado.nextLine();
 			System.out.println("cliente numero:  "+(n));
 			System.out.println("Cedula: "+cedula[n]);
 			System.out.println("Nombre: "+nombre[n]);
 			System.out.println("Telefono: "+telefono[n]);
 			System.out.println("\n");
 		}
+		usuario();
 	}
 	
 	
 
 	public static void editar_usuario() {
+		
 		for(n=1;n<=num;n++){
-			teclado.nextLine();
 			System.out.println("cliente numero:  "+(n));
 			System.out.println("Cedula: "+cedula[n]);
 			System.out.println("Nombre: "+nombre[n]);
 			System.out.println("Telefono: "+telefono[n]);
-		
+			System.out.println("\n");
+			
 		}	
-		teclado.nextLine();
 		System.out.println("Suministre el id del cliente a modificar ");
 		n = teclado.nextInt();
 	
@@ -380,8 +373,10 @@ public class usuario {
 			System.out.println("Suministre Telefono: ");
 			telefono[n] = teclado.nextLine();
 			System.out.println("\n");
-		menu_principal();
+			
+		usuario();
 	}
+	
 	public static void eliminar_usuario() {
 			
 	}
@@ -393,7 +388,7 @@ public class usuario {
 	}
 	public static void crear_salas() {
 		teclado = new Scanner(System.in);
-		System.out.println("SUMINISTRE LA CANTIDAD DE SALAS A REGISTRAR: ");
+		System.out.println("Suministre la cantidad de salas a registrar: ");
 		num = teclado.nextInt();
 		System.out.println("\n");
 		for(n=1;n<=num;n++){
@@ -415,14 +410,13 @@ public class usuario {
 		}
 	}
 	public static void editar_salas() {
+		teclado.nextLine();
 		for(n=1;n<=num;n++){
-			teclado.nextLine();
 			System.out.println("cliente numero:  "+(n));
         	System.out.println("Nombre1: "+nombre1[n]);
 			
 		
 		}	
-		teclado.nextLine();
 		System.out.println("Suministre el id del cliente a modificar ");
 		n = teclado.nextInt();
 	
@@ -443,7 +437,7 @@ public static void eliminar_salas() {
 	}
 public static void crear_peliculas() {
 	teclado = new Scanner(System.in);
-	System.out.println("SUMINISTRE LA CANTIDAD DE PELICULAS A REGISTRAR: ");
+	System.out.println("Suministre la cantidad de peliculas a registrar: ");
 	num = teclado.nextInt();
 	System.out.println("\n");
 	for(n=1;n<=num;n++){
@@ -478,6 +472,7 @@ public static void editar_peliculas() {
 	teclado.nextLine();
 	System.out.println("Suministre el id de la pelicula a modificar ");
 	n = teclado.nextInt();
+
 		teclado.nextLine();
 		System.out.println(" pelicula numero:  "+(n));
 		
