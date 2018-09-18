@@ -1,3 +1,11 @@
+Andres gaviria
+
+Sebastian Lozano
+
+Crtistian Martinez
+
+-----------------------------------------------------------------------
+
 package proyecto;
 
 import java.awt.Color;
